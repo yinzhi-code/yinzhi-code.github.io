@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yinzhi-code.github.io">
-  <title>jjjjjj | 印致&#39;s博客</title>
+  <title>估计两个随机数互素的概率 | 印致&#39;s博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="jjjjjj6666 reetgy">
+  <meta name="description" content="估计两个随机数互素的概率计算两个随机选取并小于或等于N的互异正整数互素的概率">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jjjjjj">
-<meta property="og:url" content="https://yinzhi-code.github.io/2020/02/12/jjjjjj/index.html">
+<meta property="og:title" content="估计两个随机数互素的概率">
+<meta property="og:url" content="https://yinzhi-code.github.io/2020/02/13/%E4%BC%B0%E8%AE%A1%E4%B8%A4%E4%B8%AA%E9%9A%8F%E6%9C%BA%E6%95%B0%E4%BA%92%E7%B4%A0%E7%9A%84%E6%A6%82%E7%8E%87/index.html">
 <meta property="og:site_name" content="印致&#39;s博客">
-<meta property="og:description" content="jjjjjj6666 reetgy">
+<meta property="og:description" content="估计两个随机数互素的概率计算两个随机选取并小于或等于N的互异正整数互素的概率">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-12T12:16:23.012Z">
-<meta property="article:modified_time" content="2020-02-12T12:16:23.099Z">
+<meta property="article:published_time" content="2020-02-13T09:59:07.487Z">
+<meta property="article:modified_time" content="2020-02-13T09:59:07.582Z">
 <meta property="article:author" content="印致">
 <meta name="twitter:card" content="summary">
   
@@ -187,14 +187,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-jjjjjj" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-估计两个随机数互素的概率" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      jjjjjj
+      估计两个随机数互素的概率
     </h1>
   
 
@@ -206,8 +206,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/02/12/jjjjjj/" class="archive-article-date">
-        <time datetime="2020-02-12T12:16:23.012Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-12</time>
+<a href="/2020/02/13/%E4%BC%B0%E8%AE%A1%E4%B8%A4%E4%B8%AA%E9%9A%8F%E6%9C%BA%E6%95%B0%E4%BA%92%E7%B4%A0%E7%9A%84%E6%A6%82%E7%8E%87/" class="archive-article-date">
+        <time datetime="2020-02-13T09:59:07.487Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-13</time>
 </a>
 
   
@@ -220,7 +220,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2字</span>
+      <span class="post-count">79字</span>
     </span>
   </span>
 
@@ -240,9 +240,8 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="jjjjjj"><a href="#jjjjjj" class="headerlink" title="jjjjjj"></a>jjjjjj</h1><h2 id="6666"><a href="#6666" class="headerlink" title="6666"></a>6666</h2><hr>
-<p>reetgy</p>
-
+    <h1 id="估计两个随机数互素的概率"><a href="#估计两个随机数互素的概率" class="headerlink" title="估计两个随机数互素的概率"></a>估计两个随机数互素的概率</h1><h2 id="计算两个随机选取并小于或等于N的互异正整数互素的概率"><a href="#计算两个随机选取并小于或等于N的互异正整数互素的概率" class="headerlink" title="计算两个随机选取并小于或等于N的互异正整数互素的概率"></a>计算两个随机选取并小于或等于N的互异正整数互素的概率</h2><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Rel &#x3D; 0;</span><br><span class="line">Tot &#x3D; 0;</span><br><span class="line">for (i &#x3D; 1; i &lt;&#x3D; N; i++)</span><br><span class="line">&#123;</span><br><span class="line">	Tot++;</span><br><span class="line">	if (Gcd(i, j) &#x3D;&#x3D; 1)</span><br><span class="line">		Rel++;</span><br><span class="line">&#125;</span><br><span class="line">printf(&quot;Percentage of relative prime pairs is %f\n&quot;, (double)Rel &#x2F; Tot);</span><br></pre></td></tr></table></figure>
     
 
     
@@ -288,7 +287,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https:/yinzhi-code.github.io/2020/02/12/jjjjjj/" title="jjjjjj" target="_blank">https:/yinzhi-code.github.io/2020/02/12/jjjjjj/</a>
+          <a href="https:/yinzhi-code.github.io/2020/02/13/估计两个随机数互素的概率/" title="估计两个随机数互素的概率" target="_blank">https:/yinzhi-code.github.io/2020/02/13/估计两个随机数互素的概率/</a>
         </li>
         
         <li>
@@ -355,7 +354,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://yinzhi-code.github.io/2020/02/12/jjjjjj/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://yinzhi-code.github.io/2020/02/13/%E4%BC%B0%E8%AE%A1%E4%B8%A4%E4%B8%AA%E9%9A%8F%E6%9C%BA%E6%95%B0%E4%BA%92%E7%B4%A0%E7%9A%84%E6%A6%82%E7%8E%87/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -371,8 +370,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2020/02/04/%E5%88%A9%E7%94%A8github%E5%92%8Chexo%E6%90%AD%E5%BB%BAyilia%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88windows%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">利用github和hexo搭建yilia主题的个人博客（windows）</div>
+    <a href="/2020/02/13/%E6%B1%82%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0%E7%9A%84%E5%B9%82%E7%9A%84%E5%80%BC/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">求一个整数的幂的值</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -399,7 +398,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#jjjjjj"><span class="toc-number">1.</span> <span class="toc-text">jjjjjj</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6666"><span class="toc-number">1.1.</span> <span class="toc-text">6666</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#估计两个随机数互素的概率"><span class="toc-number">1.</span> <span class="toc-text">估计两个随机数互素的概率</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#计算两个随机选取并小于或等于N的互异正整数互素的概率"><span class="toc-number">1.1.</span> <span class="toc-text">计算两个随机选取并小于或等于N的互异正整数互素的概率</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
