@@ -10,16 +10,17 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="最大的子序列和问题要求：给定整数A1,A2,A3,……,AN。求最大值。（为方便起见，如果所有整数均为负数，则最大子序列和为0） 例如：输入-2，11，-4，13，-5，-2时，答案为20（从A2到A4）">
+  <meta name="description" content="要求：给定整数A1,A2,A3,……,AN。求最大值。（为方便起见，如果所有整数均为负数，则最大子序列和为0） 例如：输入-2，11，-4，13，-5，-2时，答案为20（从A2到A4）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最大的子序列和问题">
 <meta property="og:url" content="https://yinzhi-code.github.io/2020/02/13/%E6%9C%80%E5%A4%A7%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97%E5%92%8C%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="印致&#39;s博客">
-<meta property="og:description" content="最大的子序列和问题要求：给定整数A1,A2,A3,……,AN。求最大值。（为方便起见，如果所有整数均为负数，则最大子序列和为0） 例如：输入-2，11，-4，13，-5，-2时，答案为20（从A2到A4）">
+<meta property="og:description" content="要求：给定整数A1,A2,A3,……,AN。求最大值。（为方便起见，如果所有整数均为负数，则最大子序列和为0） 例如：输入-2，11，-4，13，-5，-2时，答案为20（从A2到A4）">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-13T09:26:21.063Z">
-<meta property="article:modified_time" content="2020-02-13T09:26:21.137Z">
+<meta property="article:modified_time" content="2020-02-22T11:51:40.210Z">
 <meta property="article:author" content="印致">
+<meta property="article:tag" content="最大的子序列和问题">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="印致&#39;s博客" type="application/atom+xml">
@@ -75,6 +76,8 @@
 			
 				<li><a href="/" target="_blank">主页</a></li>
 			
+				<li><a href="/archives" target="_blank">归档</a></li>
+			
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -101,21 +104,7 @@
 				
 					<a class="weixin" href="/img/mmqrcode1580786743830.png" title="微信" target="_blank"><i class="icon-weixin"></i></a>
 				
-					<a class="mail" href="/1256430133@qq.com" title="NULL" target="_blank"><i class="icon-mail"></i></a>
-				
 			</div>
-		
-			
-			
-			
-			
-			<div>
-				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=5052655&auto=0&height=66"></iframe>
-			</div>
-			
-				
-				<p style="font-size: 12px;">这似乎是首纯音乐，请尽情的欣赏它吧！<p>
-			
 		
 		</nav>
 	</header>		
@@ -151,6 +140,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -162,8 +153,6 @@
 			        
 						<a class="weixin" target="_blank" href="/img/mmqrcode1580786743830.png" title="微信"><i class="icon-weixin"></i></a>
 			        
-						<a class="mail" target="_blank" href="/1256430133@qq.com" title="NULL"><i class="icon-mail"></i></a>
-			        
 				</div>
 			</nav>
 
@@ -171,7 +160,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">主页</a></li>
+		        
+					<li style="width: 50%"><a href="/archives">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -220,7 +211,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">114字</span>
+      <span class="post-count">105字</span>
     </span>
   </span>
 
@@ -240,7 +231,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="最大的子序列和问题"><a href="#最大的子序列和问题" class="headerlink" title="最大的子序列和问题"></a>最大的子序列和问题</h1><h2 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h2><p>给定整数A1,A2,A3,……,AN。求最大值。（为方便起见，如果所有整数均为负数，则最大子序列和为0）</p>
+    <h2 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h2><p>给定整数A1,A2,A3,……,AN。求最大值。（为方便起见，如果所有整数均为负数，则最大子序列和为0）</p>
 <h2 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h2><p>输入-2，11，-4，13，-5，-2时，答案为20（从A2到A4）</p>
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int MaxSubsequenceSum(const int A[], int N)</span><br><span class="line">&#123;</span><br><span class="line">	int ThisSum, MaxSum, j;</span><br><span class="line">	ThisSum &#x3D; MaxSum &#x3D; 0;</span><br><span class="line">	for (j &#x3D; 0; j &lt; N; j++)</span><br><span class="line">	&#123;</span><br><span class="line">		ThisSum +&#x3D; A[j];</span><br><span class="line">		if (ThisSum &gt; MaxSum)</span><br><span class="line">			MaxSum &#x3D; ThisSum;</span><br><span class="line">		else if (ThisSum &lt; 0)</span><br><span class="line">			ThisSum &#x3D; 0;</span><br><span class="line">	&#125;</span><br><span class="line">	return MaxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -307,7 +298,29 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">最大的子序列和问题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
     
 
@@ -410,7 +423,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#最大的子序列和问题"><span class="toc-number">1.</span> <span class="toc-text">最大的子序列和问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#要求："><span class="toc-number">1.1.</span> <span class="toc-text">要求：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例如："><span class="toc-number">1.2.</span> <span class="toc-text">例如：</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#要求："><span class="toc-number">1.</span> <span class="toc-text">要求：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例如："><span class="toc-number">2.</span> <span class="toc-text">例如：</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -501,7 +514,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -579,6 +592,34 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hexo命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">二分查找</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">求一个整数的幂的值</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">github hexo 博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">最大的子序列和问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">求最大公约数（Gcd）（欧几里得算法）</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">估计两个随机数互素的概率</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -646,7 +687,7 @@
     	<section class="tools-section tools-section-me" q-show="aboutme">
         
           
-  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>c、c++、<br>博客、金州勇士队球迷<br><br>联系QQ:1256430133<br><br>很惭愧<br><br>刚刚学会搭建博客，非常简陋<br>谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>c、c++、博客<br><br>联系QQ:1256430133<br><br>很惭愧<br><br>博客非常简陋<br>谢谢大家<br>and勇士总冠军!</div>
   	  	
     	</section>
     
@@ -762,6 +803,56 @@
   
   <!-- <script async type="text/javascript" size="90" alpha="0.2" zIndex="0" src="/plugins/ribbon.js/ribbon.min.js"></script> -->
   
+  
+    <script type="text/javascript" src="/plugins/live2d-widget.js/L2Dwidget.min.js"></script>
+<script type="text/javascript">
+  /**
+   * 完整配置请参考：https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
+   */
+  var pluginModelPath = "assets/", // 模型的文件路径，无需更改
+    pluginRootPath = "/live2d_models/"; // 插件的路径，无需更改
+  //特定的模型json文件名称
+  var modelPathJson = {
+    "epsilon2_1": "Epsilon2.1",
+    "gf": "Gantzert_Felixander",
+    "haru/01": "haru01",
+    "haru/02": "haru02",
+    "nietzsche": "nietzche"
+  }
+
+  
+    var modelName = "hibiki";
+  
+
+  var modelJsonPath = "";
+  if (modelPathJson[modelName]) {
+    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelPathJson[modelName] +
+      ".model.json";
+  } else {
+    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelName + ".model.json";
+  }
+  L2Dwidget.init({
+    model: {
+      jsonPath: modelJsonPath
+    },
+    display: {
+       position: "right", 
+       width: 145, 
+       height: 315, 
+       hOffset: 50, 
+      
+    },
+    mobile: {
+       show: false, 
+       scale: 0.6 
+    },
+    react: {
+       opacity: 0.8 
+    }
+  })
+
+</script>
+
   
   
 </body>
