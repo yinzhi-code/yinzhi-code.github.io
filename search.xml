@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>估计两个随机数互素的概率</title>
+      <link href="/2020/02/13/gu-ji-liang-ge-sui-ji-shu-hu-su-de-gai-lu/"/>
+      <url>/2020/02/13/gu-ji-liang-ge-sui-ji-shu-hu-su-de-gai-lu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="计算两个随机选取并小于或等于N的互异正整数互素的概率"><a href="#计算两个随机选取并小于或等于N的互异正整数互素的概率" class="headerlink" title="计算两个随机选取并小于或等于N的互异正整数互素的概率"></a>计算两个随机选取并小于或等于N的互异正整数互素的概率</h2><a id="more"></a><pre><code>Rel = 0;Tot = 0;for (i = 1; i &lt;= N; i++){    Tot++;    if (Gcd(i, j) == 1)        Rel++;}printf(&quot;Percentage of relative prime pairs is %f\n&quot;, (double)Rel / Tot);</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 估计两个随机数互素的概率 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>求一个整数的幂的值</title>
+      <link href="/2020/02/13/qiu-yi-ge-zheng-shu-de-mi-de-zhi/"/>
+      <url>/2020/02/13/qiu-yi-ge-zheng-shu-de-mi-de-zhi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="求X的N次方"><a href="#求X的N次方" class="headerlink" title="求X的N次方"></a>求X的N次方</h2><a id="more"></a><pre><code>long int Pow(long int X, unsigned int N){    if (N == 0)        return 1;    if (N == 1)        return X;    if (IsEven(N))     //N是偶数        return Pow(X * X, N / 2);    else        return Pow(X * X, N / 2) * X;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 求一个整数的幂的值 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>求最大公约数（Gcd）（欧几里得算法）</title>
+      <link href="/2020/02/13/qiu-zui-da-gong-yue-shu-gcd-ou-ji-li-de-suan-fa/"/>
+      <url>/2020/02/13/qiu-zui-da-gong-yue-shu-gcd-ou-ji-li-de-suan-fa/</url>
+      
+        <content type="html"><![CDATA[<h2 id="例如：Gcd-50-15-5"><a href="#例如：Gcd-50-15-5" class="headerlink" title="例如：Gcd(50,15)=5"></a>例如：Gcd(50,15)=5</h2><a id="more"></a><pre><code>unsigned int Gcd(unsigned int M, unsigned int N){    unsigned int Rem;    while (N &gt; 0)    {        Rem = M % N;        M = N;        N = Rem;    }    return M;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 求最大公约数（Gcd）（欧几里得算法） </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>二分查找</title>
+      <link href="/2020/02/13/er-fen-cha-zhao/"/>
+      <url>/2020/02/13/er-fen-cha-zhao/</url>
+      
+        <content type="html"><![CDATA[<h2 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h2><p>给定一个整数X和整数A0,A1,A2,……,AN-1。后者已经预先排序并在内存中，求使得Ai=X的下标i，如果X不在数据中，则返回i=-1。</p><a id="more"></a><pre><code>int BinarySearch(const ElementType A[], ElementType X, int N){    int Low, Mid, High;    Low = 0;    High = N - 1;    while (Low &lt;= High)    {        Mid = (Low + High) / 2;        if (A[Mid] &lt; X)            Low = Mid + 1;        else if (A[Mid] &gt; X)            High = Mid - 1;        else             return Mid;    }    return NotFound;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 二分查找 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>最大的子序列和问题</title>
+      <link href="/2020/02/13/zui-da-de-zi-xu-lie-he-wen-ti/"/>
+      <url>/2020/02/13/zui-da-de-zi-xu-lie-he-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<h2 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h2><p>给定整数A1,A2,A3,……,AN。求最大值。（为方便起见，如果所有整数均为负数，则最大子序列和为0）</p><h2 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h2><p>输入-2，11，-4，13，-5，-2时，答案为20（从A2到A4）</p><a id="more"></a><pre><code>int MaxSubsequenceSum(const int A[], int N){    int ThisSum, MaxSum, j;    ThisSum = MaxSum = 0;    for (j = 0; j &lt; N; j++)    {        ThisSum += A[j];        if (ThisSum &gt; MaxSum)            MaxSum = ThisSum;        else if (ThisSum &lt; 0)            ThisSum = 0;    }    return MaxSum;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 最大的子序列和问题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>利用github和hexo搭建yilia主题的个人博客（windows）</title>
+      <link href="/2020/02/04/li-yong-github-he-hexo-da-jian-yilia-zhu-ti-de-ge-ren-bo-ke-windows/"/>
+      <url>/2020/02/04/li-yong-github-he-hexo-da-jian-yilia-zhu-ti-de-ge-ren-bo-ke-windows/</url>
+      
+        <content type="html"><![CDATA[<h2 id="搭建和部署博客"><a href="#搭建和部署博客" class="headerlink" title="搭建和部署博客"></a>搭建和部署博客</h2><ul><li>安装git<br>可以在<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">官网</a>上下载安装。但很多时候下载速度很慢，可以点击<a href="https://npm.taobao.org/mirrors/git-for-windows/v2.25.0.windows.1/Git-2.25.0-64-bit.exe" target="_blank" rel="noopener">这个链接</a>下载。<br>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！接着在该窗口中输入命令（每输入完一行，按回车）：<pre><code>  $ git config --global user.name &quot;此处填入你的github用户名&quot;  $ git config --global user.email &quot;github邮箱&quot;</code></pre></li><li>安装nodejs<br>在<a href="nodejs.org">nodejs</a>官网上下载安装nodejs长期支持版(LTS)。下载完成后，点击安装程序，一直next到完成。<a id="more"></a><h2 id="打开命令行"><a href="#打开命令行" class="headerlink" title="打开命令行"></a>打开命令行</h2>（以win10为例）在 开始-windows系统 下右键点击命令提示符，以管理员身份运行。</li><li>输入命令：<br><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code><br><code>cnpm install -g hexo-cli</code><br>新建一个文件夹blog<br><code>cd 该文件夹的路径</code><br><code>hexo init</code><br>此时，博客已经在本地生成。<br><code>hexo server</code><br>在浏览器中输入网址：localhost:4000<br>这就是你的博客！里面有一篇文章hello world，其中有一些hexo命令。<br>然后我们写一篇博客。回到命令行后按ctrl+c<br><code>hexo new &quot;此处输入博客的标题&quot;</code><br>在\blog\source_posts下应该有该文章，是md文件。你就可以打开编辑了。记得保存。回到命令行：<br><code>hexo clean</code><br><code>hexo generate</code><br><code>hexo server</code><br>刷新一下4000窗口，你就能看到你新写的文章。<br>按ctrl+c<h2 id="部署博客"><a href="#部署博客" class="headerlink" title="部署博客"></a>部署博客</h2></li><li>下面的步骤非常重要！我们要将博客部署到远端服务器上，让他人可以看到。<br>在github上新建一个仓库，一定命名为   github用户名.github.io<br>回到命令行<br><code>cnpm install hexo-deployer-git --save</code><br>在blog文件夹下打开_config.yml  将最底部的几行改为：<br>deploy:<br>type: git<br>repo: 此处为刚刚创建仓库后给出的https网址，粘到这里<br>branch: master  </li><li>回到命令行<br><code>hexo deploy</code><br>过程中会要求输入github用户名和密码</li><li>over了！！</li><li>github用户名.github.io   就是你的博客网址，以后就可以通过该网址访问你的博客了！<h2 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h2></li><li>如果你觉得自带主题不好看，可以自行换主题。下面是yilia主题：<br><a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia</a>  大家可以自己探索，作者的说明也很清楚。</li></ul><h2 id="注："><a href="#注：" class="headerlink" title="注："></a>注：</h2><ol><li>搭建博客的方法有许多种，如果按照本文搭建时遇到问题，可先将blog文件夹删掉重新开始，并且网上有许多问题的解决办法，可供查看。或在本文下方留下评论。</li><li>本文主要参考b站up主CodeSheep的视频<a href="https://www.bilibili.com/video/av44544186" target="_blank" rel="noopener">手把手教你从0开始搭建自己的个人博客 |无坑版视频教程| hexo</a> 在此表示感谢。</li><li><a href="https://github.com/" target="_blank" rel="noopener">github</a>:大家在其网站上自行注册</li><li><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo</a>:快速、简洁且高效的博客框架</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo博客 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> github hexo 博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2020/02/03/hello-world/"/>
+      <url>/2020/02/03/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo博客 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo命令 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
